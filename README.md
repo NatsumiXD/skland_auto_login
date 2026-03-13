@@ -34,11 +34,6 @@
 2. 创建“Repository secrets”
 [![Create the secret](https://img.shields.io/badge/GitHub-Create%20the%20secret-success?logo=github)](./../../settings/secrets/actions)
 
-已配置：
-
-- `workflow_dispatch`：手动执行
-- `schedule`：定时执行（默认 UTC `0 17 * * *`，约等于北京时间每日 01:00）
-
 ## 3. 配置仓库 Secrets
 
 路径：`Settings -> Secrets and variables -> Actions -> New repository secret`
