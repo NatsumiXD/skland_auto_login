@@ -28,17 +28,8 @@
 工作流文件：`.github/workflows/sign-in.yml`
 
 ### 一键创建自己的仓库
-
-可以在 README 放按钮，让用户一键跳转：
-
-[![Fork](https://img.shields.io/badge/GitHub-Fork-blue?logo=github)](https://github.com/OWNER/REPO/fork)
-[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-success?logo=github)](https://github.com/new?template_name=REPO&template_owner=OWNER)
-
-使用说明：
-
-- `OWNER` 和 `REPO` 需要替换为你的实际仓库地址。
-- 如果仓库启用了 Template（仓库设置中勾选 `Template repository`），建议优先使用 `Use this template`。
-- GitHub 暂不支持通过按钮自动写入 Actions Secrets，所以用户仍需在自己仓库手动配置 `SKLAND_TOKEN(S)` 或 `SKLAND_USERS_JSON`。
+1. 
+[![Use this template](https://img.shields.io/badge/GitHub-Use%20this%20template-success?logo=github)](https://github.com/new?template_name=skland_auto_login&template_owner=NatsumiXD)
 
 已配置：
 
