@@ -1,0 +1,30 @@
+name: Skland Sign In
+
+on:
+  workflow_dispatch:
+  schedule:
+    # UTC 17:00 = Asia/Shanghai 01:00 (+1 day)
+    - cron: "0 17 * * *"
+
+jobs:
+  sign-in:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SKLAND_TOKEN: ${{ secrets.SKLAND_TOKEN }}
+      SKLAND_TOKENS: ${{ secrets.SKLAND_TOKENS }}
+      SKLAND_USERS_JSON: ${{ secrets.SKLAND_USERS_JSON }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sign in
+        run: python main.py

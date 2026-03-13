@@ -1,0 +1,83 @@
+# ======================== 基础配置 (Global Settings) ========================
+
+# 日志输出等级。可选值: "debug" (输出详细运行日志) 或 "info" (仅输出运行结果)
+log_level: "info"
+
+# ======================== 账户配置 (User Configuration) ========================
+# GitHub Actions 建议使用仓库 Secrets 注入：
+# - SKLAND_TOKEN (单账号)
+# - SKLAND_TOKENS (多账号，支持换行或逗号分隔)
+# - SKLAND_USERS_JSON (JSON 数组，支持自定义昵称)
+#
+# 本地运行时也可继续使用下方 users 配置。
+users:
+  - nickname: "我的大号"
+    token: "这里填入教程中获取的Token"
+
+  - nickname: "我的小号"
+    token: "这里填入另一个Token"
+
+# ======================== 消息推送配置 (Notification Settings) ========================
+# 填写相应渠道的参数即可启用对应推送服务。不需要使用的渠道请保持对应参数为空 ("")。
+
+notify:
+  # ---------- Qmsg 酱 ----------
+  qmsg:
+    # Qmsg 推送密钥
+    key: ""
+    # 自定义 API 接口地址 (可选配置)
+    # base_url: "https://qmsg.zendee.cn"
+
+  # ---------- OneBot V11 标准协议 (NapCat / go-cqhttp 等) ----------
+  # 支持同时下发私聊与群聊消息，目标 ID 均支持配置多个
+  onebot:
+    # OneBot HTTP 接口地址，例如: "http://127.0.0.1:3000"
+    url: ""
+    # HTTP API 鉴权密钥 (未开启鉴权请留空)
+    access_token: ""
+    # 接收私聊消息的 QQ 号列表
+    private_ids:
+      # - 123456789
+      # - 987654321
+    # 接收群聊消息的 QQ 群号列表
+    group_ids:
+      # - 111222333
+      # - 444555666
+
+  # ---------- 邮件推送 (SMTP) ----------
+  email:
+    # SMTP 服务器地址，例如: "smtp.qq.com"
+    smtp_host: ""
+    # SMTP 服务器端口，SSL 协议一般为 465，STARTTLS 协议一般为 587
+    smtp_port: 465
+    # 是否启用 SSL 加密连接
+    use_ssl: true
+    # 邮箱账号 (通常为完整的邮箱地址)
+    username: ""
+    # 邮箱登录密码或第三方客户端授权码
+    password: ""
+    # 发件人地址 (如保持为空，则默认使用 username 作为发件人)
+    sender: ""
+    # 接收通知的目标邮箱地址
+    receiver: ""
+
+  # ---------- 企业微信群机器人 ----------
+  wecom:
+    # 企业微信群机器人 Webhook 完整地址
+    webhook_url: ""
+
+  # ---------- 微信服务号 (基于公众号模板消息) ----------
+  wechat_mp:
+    # 微信公众号 AppID
+    app_id: ""
+    # 微信公众号 AppSecret
+    app_secret: ""
+    # 微信公众号模板消息 ID
+    template_id: ""
+    # 接收消息用户的 OpenID
+    open_id: ""
+
+  # ---------- Server酱 (Turbo版) ----------
+  serverchan:
+    # Server酱 SendKey 通道密钥
+    send_key: ""
